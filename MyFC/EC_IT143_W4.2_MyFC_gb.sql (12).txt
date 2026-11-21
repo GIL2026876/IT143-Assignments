@@ -1,0 +1,19 @@
+/*
+Step 5.2: Add a primary key and refine the table
+*/
+
+USE MyFC;
+GO
+
+ALTER TABLE dbo.tblPlayersPerTeam
+ALTER COLUMN TeamCode varchar(100) NOT NULL;
+GO
+
+ALTER TABLE dbo.tblPlayersPerTeam
+ALTER COLUMN PlayerCount int NOT NULL;
+GO
+
+ALTER TABLE dbo.tblPlayersPerTeam
+ADD CONSTRAINT PK_tblPlayersPerTeam
+PRIMARY KEY (TeamCode);
+GO

@@ -1,0 +1,20 @@
+/*
+Step 4: Create a view
+*/
+
+USE MyFC;
+GO
+
+CREATE OR ALTER VIEW dbo.vw_MyFC_PlayersPerTeam
+AS
+SELECT
+    CAST(t.t_code AS varchar(100)) AS TeamCode,
+    COUNT(DISTINCT p.pl_id) AS PlayerCount
+FROM dbo.tblPlayerDim AS p
+INNER JOIN dbo.tblTeamDim AS t
+    ON p.t_id = t.t_id
+WHERE t.t_code IS NOT NULL
+GROUP BY t.t_code;
+GO
+
+SELECT * FROM dbo.vw_MyFC_PlayersPerTeam;

@@ -1,0 +1,19 @@
+/*
+Step 5.1: Create a table from the view
+*/
+
+USE MyFC;
+GO
+
+IF OBJECT_ID('dbo.tblPlayersPerTeam', 'U') IS NOT NULL
+    DROP TABLE dbo.tblPlayersPerTeam;
+GO
+
+SELECT
+    TeamCode,
+    PlayerCount
+INTO dbo.tblPlayersPerTeam
+FROM dbo.vw_MyFC_PlayersPerTeam;
+GO
+
+SELECT * FROM dbo.tblPlayersPerTeam;

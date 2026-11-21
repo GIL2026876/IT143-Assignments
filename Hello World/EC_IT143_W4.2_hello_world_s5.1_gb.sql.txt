@@ -1,0 +1,23 @@
+/*
+NAME: EC_IT143_W4.2_hello_world_s5.1_gb
+
+PURPOSE:
+Create a physical table from the view.
+*/
+
+USE EC_IT143_DA;
+GO
+
+DROP TABLE IF EXISTS dbo.t_hello_world;
+GO
+
+SELECT
+    v.my_message,
+    v.current_date_time
+INTO dbo.t_hello_world
+FROM dbo.v_hello_world_load AS v;
+GO
+
+SELECT *
+FROM dbo.t_hello_world;
+GO

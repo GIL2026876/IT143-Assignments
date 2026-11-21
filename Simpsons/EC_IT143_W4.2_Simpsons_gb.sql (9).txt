@@ -1,0 +1,13 @@
+/*
+Step 8: Execute the stored procedure.
+*/
+
+USE Simpsons;
+GO
+
+EXEC dbo.usp_RefreshExpenditureByCategory;
+GO
+
+SELECT *
+FROM dbo.tblExpenditureByCategory
+ORDER BY TotalExpenditure DESC;

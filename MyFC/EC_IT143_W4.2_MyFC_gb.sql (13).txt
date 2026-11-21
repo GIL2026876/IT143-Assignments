@@ -1,0 +1,19 @@
+/*
+Step 6: Refresh the table using the view
+*/
+
+USE MyFC;
+GO
+
+TRUNCATE TABLE dbo.tblPlayersPerTeam;
+GO
+
+INSERT INTO dbo.tblPlayersPerTeam
+    (TeamCode, PlayerCount)
+SELECT
+    TeamCode,
+    PlayerCount
+FROM dbo.vw_MyFC_PlayersPerTeam;
+GO
+
+SELECT * FROM dbo.tblPlayersPerTeam;

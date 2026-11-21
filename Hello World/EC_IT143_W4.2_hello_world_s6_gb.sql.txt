@@ -1,0 +1,27 @@
+/*
+NAME: EC_IT143_W4.2_hello_world_s6_gb
+
+PURPOSE:
+Load the table using an ad hoc SQL script.
+*/
+
+USE EC_IT143_DA;
+GO
+
+TRUNCATE TABLE dbo.t_hello_world;
+GO
+
+INSERT INTO dbo.t_hello_world
+(
+    my_message,
+    current_date_time
+)
+SELECT
+    v.my_message,
+    v.current_date_time
+FROM dbo.v_hello_world_load AS v;
+GO
+
+SELECT *
+FROM dbo.t_hello_world;
+GO

@@ -1,0 +1,23 @@
+/*
+NAME: EC_IT143_W4.2_hello_world_s4_gb
+
+PURPOSE:
+Turn the ad hoc SQL query into a reusable view.
+*/
+
+USE EC_IT143_DA;
+GO
+
+DROP VIEW IF EXISTS dbo.v_hello_world_load;
+GO
+
+CREATE VIEW dbo.v_hello_world_load
+AS
+SELECT
+    'Hello World' AS my_message,
+    GETDATE() AS current_date_time;
+GO
+
+SELECT *
+FROM dbo.v_hello_world_load;
+GO

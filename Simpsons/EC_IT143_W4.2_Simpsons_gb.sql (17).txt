@@ -1,0 +1,24 @@
+/*
+Step 7: Create a stored procedure.
+*/
+
+USE Simpsons;
+GO
+
+CREATE OR ALTER PROCEDURE dbo.usp_RefreshExpenditureByCategory
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    TRUNCATE TABLE dbo.tblExpenditureByCategory;
+
+    INSERT INTO dbo.tblExpenditureByCategory
+        (Category, TotalExpenditure)
+    SELECT
+        Category,
+        SUM(Amount)
+    FROM dbo.Planet_Express
+    WHERE Category IS NOT NULL
+    GROUP BY Category;
+END;
+GO

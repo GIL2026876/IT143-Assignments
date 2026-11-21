@@ -1,0 +1,16 @@
+/*
+Step 3: Ad hoc query
+Question: How many players are on each team?
+*/
+
+USE MyFC;
+GO
+
+SELECT
+    t.t_code AS TeamCode,
+    COUNT(DISTINCT p.pl_id) AS PlayerCount
+FROM dbo.tblPlayerDim AS p
+INNER JOIN dbo.tblTeamDim AS t
+    ON p.t_id = t.t_id
+GROUP BY t.t_code
+ORDER BY t.t_code;

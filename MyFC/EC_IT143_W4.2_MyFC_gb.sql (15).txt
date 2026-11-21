@@ -1,0 +1,11 @@
+/*
+Step 8: Execute the stored procedure
+*/
+
+USE MyFC;
+GO
+
+EXEC dbo.usp_RefreshPlayersPerTeam;
+GO
+
+SELECT * FROM dbo.tblPlayersPerTeam;

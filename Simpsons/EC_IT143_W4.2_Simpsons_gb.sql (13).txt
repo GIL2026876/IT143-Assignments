@@ -1,0 +1,20 @@
+/*
+Step 4: Create a view for expenditure by category.
+*/
+
+USE Simpsons;
+GO
+
+CREATE OR ALTER VIEW dbo.vw_ExpenditureByCategory
+AS
+SELECT
+    Category,
+    SUM(Amount) AS TotalExpenditure
+FROM dbo.Planet_Express
+WHERE Category IS NOT NULL
+GROUP BY Category;
+GO
+
+SELECT *
+FROM dbo.vw_ExpenditureByCategory
+ORDER BY TotalExpenditure DESC;

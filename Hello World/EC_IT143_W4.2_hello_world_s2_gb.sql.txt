@@ -1,0 +1,19 @@
+/*
+NAME: EC_IT143_W4.2_hello_world_s2_gb
+
+PURPOSE:
+Begin creating an answer.
+
+QUESTION:
+What is the current date and time?
+
+ANSWER:
+I can ask SQL Server to provide the
+current date and time using the GETDATE()
+function.
+
+NEXT STEP:
+Create an ad hoc SQL query using
+SELECT and GETDATE() to retrieve
+the current date and time.
+*/

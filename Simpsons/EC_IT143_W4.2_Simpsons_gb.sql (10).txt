@@ -1,0 +1,4 @@
+/*
+Question:
+Which spending categories have the highest total expenditure?
+*/

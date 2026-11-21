@@ -1,0 +1,19 @@
+/*
+Step 5.2: Refine the table and add a primary key.
+*/
+
+USE Simpsons;
+GO
+
+ALTER TABLE dbo.tblExpenditureByCategory
+ALTER COLUMN Category nvarchar(255) NOT NULL;
+GO
+
+ALTER TABLE dbo.tblExpenditureByCategory
+ALTER COLUMN TotalExpenditure float NOT NULL;
+GO
+
+ALTER TABLE dbo.tblExpenditureByCategory
+ADD CONSTRAINT PK_tblExpenditureByCategory
+PRIMARY KEY (Category);
+GO

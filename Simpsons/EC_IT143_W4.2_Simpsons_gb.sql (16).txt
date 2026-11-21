@@ -1,0 +1,23 @@
+/*
+Step 6: Refresh the expenditure table.
+*/
+
+USE Simpsons;
+GO
+
+TRUNCATE TABLE dbo.tblExpenditureByCategory;
+GO
+
+INSERT INTO dbo.tblExpenditureByCategory
+    (Category, TotalExpenditure)
+SELECT
+    Category,
+    SUM(Amount)
+FROM dbo.Planet_Express
+WHERE Category IS NOT NULL
+GROUP BY Category;
+GO
+
+SELECT *
+FROM dbo.tblExpenditureByCategory
+ORDER BY TotalExpenditure DESC;

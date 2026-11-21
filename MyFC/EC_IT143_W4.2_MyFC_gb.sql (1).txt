@@ -1,0 +1,6 @@
+/*
+Question: How many players are on each team?
+
+Answer approach:
+Count the players and group them by team.
+*/

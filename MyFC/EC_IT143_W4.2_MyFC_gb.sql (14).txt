@@ -1,0 +1,22 @@
+/*
+Step 7: Create a stored procedure
+*/
+
+USE MyFC;
+GO
+
+CREATE OR ALTER PROCEDURE dbo.usp_RefreshPlayersPerTeam
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    TRUNCATE TABLE dbo.tblPlayersPerTeam;
+
+    INSERT INTO dbo.tblPlayersPerTeam
+        (TeamCode, PlayerCount)
+    SELECT
+        TeamCode,
+        PlayerCount
+    FROM dbo.vw_MyFC_PlayersPerTeam;
+END;
+GO

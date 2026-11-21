@@ -1,0 +1,12 @@
+/*
+NAME: EC_IT143_W4.2_hello_world_s3_gb
+
+PURPOSE:
+Create an ad hoc SQL query to answer
+the question about the current date and time.
+*/
+
+SELECT
+    'Hello World' AS my_message,
+    GETDATE() AS current_date_time;
+GO

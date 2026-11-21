@@ -1,0 +1,19 @@
+/*
+Step 5.1: Create a table from the view.
+*/
+
+USE Simpsons;
+GO
+
+IF OBJECT_ID('dbo.tblExpenditureByCategory', 'U') IS NOT NULL
+    DROP TABLE dbo.tblExpenditureByCategory;
+GO
+
+SELECT
+    Category,
+    TotalExpenditure
+INTO dbo.tblExpenditureByCategory
+FROM dbo.vw_ExpenditureByCategory;
+GO
+
+SELECT * FROM dbo.tblExpenditureByCategory;

@@ -1,0 +1,6 @@
+/*
+Answer approach:
+1. Read the spending categories.
+2. Add together the transaction amounts for each category.
+3. Sort the categories from highest to lowest expenditure.
+*/

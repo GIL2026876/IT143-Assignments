@@ -1,0 +1,12 @@
+/*
+NAME: EC_IT143_W4.2_hello_world_s1_gb
+
+PURPOSE:
+Start with a simple question.
+
+QUESTION:
+What is the current date and time?
+
+This question will guide my Hello World
+SQL Data Manipulation project.
+*/
